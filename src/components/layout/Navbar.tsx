@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValueEvent, useScroll, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { MegaDropdown } from './MegaDropdown';
 import { menuItems } from '@/data/menuItems';
@@ -98,9 +98,17 @@ export function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="text-white hover:text-white/80 transition-colors duration-200 font-normal text-base"
+                    className="text-white hover:text-white/80 transition-colors duration-200 font-normal text-base flex items-center gap-1"
                   >
                     {item.label}
+                    {item.hasDropdown && (
+                      <motion.div
+                        animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                      >
+                        <ChevronDown className="w-4 h-4" />
+                      </motion.div>
+                    )}
                   </Link>
                   
                   {item.hasDropdown && item.dropdownItems && (
@@ -174,9 +182,12 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => !item.hasDropdown && setIsMobileMenuOpen(false)}
-                    className="block text-white hover:text-verde-pastel transition-colors py-2 font-medium text-lg"
+                    className="block text-white hover:text-verde-pastel transition-colors py-2 font-medium text-lg flex items-center gap-2"
                   >
                     {item.label}
+                    {item.hasDropdown && (
+                      <ChevronDown className="w-4 h-4" />
+                    )}
                   </Link>
                   
                   {/* Mobile Dropdown Items */}
