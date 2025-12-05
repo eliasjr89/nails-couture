@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, Sparkles, GraduationCap, Star } from 'lucide-react';
 import { FadeInUp } from '@/components/animations/FadeInUp';
 import { StaggerContainer, itemVariants } from '@/components/animations/StaggerContainer';
+import { TestimonialsSlider } from '@/components/TestimonialsSlider';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -249,7 +250,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-white dark:bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInUp>
             <div className="text-center mb-16">
@@ -265,8 +266,8 @@ export default function Home() {
             </div>
           </FadeInUp>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
+          <TestimonialsSlider
+            testimonials={[
               {
                 name: 'María García',
                 comment: 'Increíble experiencia. El trato es excepcional y los resultados superan mis expectativas cada vez.',
@@ -282,24 +283,9 @@ export default function Home() {
                 comment: 'El curso que hice cambió mi carrera. Ahora trabajo con confianza gracias a todo lo que aprendí.',
                 rating: 5,
               },
-            ].map((testimonial) => (
-              <motion.div
-                key={testimonial.name}
-                variants={itemVariants}
-                className="bg-card rounded-2xl p-8 shadow-lg border border-border"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-dorado fill-dorado" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-6 italic">
-                  &ldquo;{testimonial.comment}&rdquo;
-                </p>
-                <p className="font-semibold">{testimonial.name}</p>
-              </motion.div>
-            ))}
-          </StaggerContainer>
+            ]}
+            autoPlayInterval={6000}
+          />
         </div>
       </section>
 
