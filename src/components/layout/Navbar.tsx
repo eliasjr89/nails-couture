@@ -258,7 +258,7 @@ export function Navbar() {
                   >
                     {item.label}
                     {item.hasDropdown && (
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronUp className="w-4 h-4" />
                     )}
                   </button>
                   
