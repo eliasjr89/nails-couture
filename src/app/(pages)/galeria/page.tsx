@@ -1,8 +1,8 @@
 import { getGalleryItems } from '@/lib/supabase';
 import { FadeInUp } from '@/components/animations/FadeInUp';
 import { StaggerContainer } from '@/components/animations/StaggerContainer';
-import { GalleryGrid } from '@/components/GalleryGrid';
 import { Image as ImageIcon } from 'lucide-react';
+import { GalleryGrid } from '@/components/GalleryGrid';
 
 export const dynamic = 'force-dynamic';
 

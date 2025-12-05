@@ -1,8 +1,9 @@
 import { getBlogPosts } from '@/lib/supabase';
 import { FadeInUp } from '@/components/animations/FadeInUp';
 import { StaggerContainer } from '@/components/animations/StaggerContainer';
-import { BlogCard } from '@/components/BlogCard';
+
 import { BookOpen } from 'lucide-react';
+import { BlogCard } from '@/components/BlogCard';
 
 export const dynamic = 'force-dynamic';
 

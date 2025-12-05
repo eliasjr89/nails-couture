@@ -1,8 +1,8 @@
 import { getCourses } from '@/lib/supabase';
 import { FadeInUp } from '@/components/animations/FadeInUp';
 import { StaggerContainer } from '@/components/animations/StaggerContainer';
-import { CourseCard } from '@/components/CourseCard';
 import { GraduationCap } from 'lucide-react';
+import { CourseCard } from '@/components/CourseCard';
 
 export const dynamic = 'force-dynamic';
 

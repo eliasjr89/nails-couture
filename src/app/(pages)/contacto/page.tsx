@@ -1,5 +1,6 @@
 import { FadeInUp } from '@/components/animations/FadeInUp';
 import { ContactForm } from '@/components/forms/ContactForm';
+
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 export const metadata = {
