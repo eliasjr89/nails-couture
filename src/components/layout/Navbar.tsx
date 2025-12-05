@@ -23,14 +23,11 @@ export function Navbar() {
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
-  });
-
-  // Close mobile menu on scroll
-  useEffect(() => {
-    if (isMobileMenuOpen) {
+    // Close mobile menu on scroll
+    if (isMobileMenuOpen && latest > 50) {
       setIsMobileMenuOpen(false);
     }
-  }, [isScrolled]);
+  });
 
   return (
     <>

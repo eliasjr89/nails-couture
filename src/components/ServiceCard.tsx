@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, Euro } from 'lucide-react';
 import { Service } from '@/lib/supabase';
-import { itemVariants } from './animations/StaggerContainer';
+import { itemVariants } from '@/components/animations/StaggerContainer';
 
 interface ServiceCardProps {
   service: Service;
@@ -21,10 +22,11 @@ export function ServiceCard({ service }: ServiceCardProps) {
         <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-border h-full">
           {service.image_url && (
             <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-verde-pastel/20 to-dorado/20">
-              <img
+              <Image
                 src={service.image_url}
                 alt={service.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           )}

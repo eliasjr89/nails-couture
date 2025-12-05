@@ -4,6 +4,8 @@ import { StaggerContainer } from '@/components/animations/StaggerContainer';
 import { BlogCard } from '@/components/BlogCard';
 import { BookOpen } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Blog',
   description: 'Consejos, tendencias y novedades sobre uñas y tratamientos de belleza',

@@ -1,8 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { GalleryItem } from '@/lib/supabase';
-import { StaggerContainer, itemVariants } from './animations/StaggerContainer';
+import { StaggerContainer, itemVariants } from '@/components/animations/StaggerContainer';
 import { useState } from 'react';
 import { X } from 'lucide-react';
 
@@ -26,10 +27,11 @@ export function GalleryGrid({ items }: GalleryGridProps) {
             className="cursor-pointer"
           >
             <div className="aspect-square relative overflow-hidden rounded-lg bg-gradient-to-br from-verde-pastel/20 to-dorado/20">
-              <img
+              <Image
                 src={item.image_url}
                 alt={item.title || 'Gallery image'}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           </motion.div>
@@ -55,11 +57,13 @@ export function GalleryGrid({ items }: GalleryGridProps) {
           <motion.div
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
-            className="max-w-4xl max-h-[90vh]"
+            className="max-w-4xl max-h-[90vh] relative"
           >
-            <img
+            <Image
               src={selectedImage.image_url}
               alt={selectedImage.title || 'Gallery image'}
+              width={1200}
+              height={800}
               className="w-full h-full object-contain rounded-lg"
             />
             {selectedImage.title && (

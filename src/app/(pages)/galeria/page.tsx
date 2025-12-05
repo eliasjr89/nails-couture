@@ -4,6 +4,8 @@ import { StaggerContainer } from '@/components/animations/StaggerContainer';
 import { GalleryGrid } from '@/components/GalleryGrid';
 import { Image as ImageIcon } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Galería',
   description: 'Descubre nuestros trabajos y resultados en uñas y tratamientos corporales',

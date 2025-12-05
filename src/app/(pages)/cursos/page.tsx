@@ -4,6 +4,8 @@ import { StaggerContainer } from '@/components/animations/StaggerContainer';
 import { CourseCard } from '@/components/CourseCard';
 import { GraduationCap } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Cursos',
   description: 'Formación profesional en uñas y tratamientos corporales. Cursos certificados para todos los niveles',

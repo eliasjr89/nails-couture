@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { BlogPost } from '@/lib/supabase';
-import { itemVariants } from './animations/StaggerContainer';
+import { itemVariants } from '@/components/animations/StaggerContainer';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -29,10 +30,11 @@ export function BlogCard({ post }: BlogCardProps) {
         <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-border h-full">
           {post.cover_image_url && (
             <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-verde-pastel/20 to-dorado/20">
-              <img
+              <Image
                 src={post.cover_image_url}
                 alt={post.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           )}

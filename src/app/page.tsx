@@ -265,7 +265,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-6 italic">
-                  "{testimonial.comment}"
+                  &ldquo;{testimonial.comment}&rdquo;
                 </p>
                 <p className="font-semibold">{testimonial.name}</p>
               </motion.div>

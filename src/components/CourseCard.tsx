@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, Euro, Download, Award } from 'lucide-react';
 import { Course } from '@/lib/supabase';
-import { itemVariants } from './animations/StaggerContainer';
+import { itemVariants } from '@/components/animations/StaggerContainer';
 
 interface CourseCardProps {
   course: Course;
@@ -21,10 +22,11 @@ export function CourseCard({ course }: CourseCardProps) {
         <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-border h-full">
           {course.flyer_url && (
             <div className="aspect-video relative overflow-hidden bg-gradient-to-br from-dorado/20 to-verde-pastel/20">
-              <img
+              <Image
                 src={course.flyer_url}
                 alt={course.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           )}

@@ -4,6 +4,8 @@ import { StaggerContainer, itemVariants } from '@/components/animations/StaggerC
 import { ServiceCard } from '@/components/ServiceCard';
 import { Sparkles } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Servicios',
   description: 'Descubre nuestra amplia gama de servicios profesionales de uñas y tratamientos corporales',
