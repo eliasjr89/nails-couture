@@ -80,15 +80,15 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* Logo - Left */}
             <Link href="/" className="flex items-center space-x-2 group z-50">
               <span className="font-display text-2xl font-bold text-white group-hover:text-verde-pastel transition-colors duration-200">
                 Serendinails
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Navigation - Center */}
+            <div className="hidden md:flex items-center space-x-8 absolute left-1/2 -translate-x-1/2">
               {menuItems.map((item) => (
                 <div
                   key={item.label}
@@ -113,8 +113,11 @@ export function Navbar() {
                   )}
                 </div>
               ))}
+            </div>
 
-              {/* CTA Button with Fill Effect */}
+            {/* Right Side - CTA and Theme Toggle */}
+            <div className="hidden md:flex items-center space-x-4">
+              {/* CTA Button with Progress Bar Fill Effect */}
               <a
                 href="https://www.fresha.com"
                 target="_blank"
@@ -124,12 +127,12 @@ export function Navbar() {
                 <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                   Reservar Cita
                 </span>
+                {/* Progress bar fill from left */}
                 <motion.div
-                  className="absolute inset-0 bg-white"
+                  className="absolute inset-0 bg-white origin-left"
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
-                  style={{ transformOrigin: 'left' }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                 />
               </a>
 

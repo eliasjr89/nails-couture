@@ -109,9 +109,5 @@ export const menuItems: MenuItem[] = [
         ]
       }
     ]
-  },
-  {
-    label: 'Contacto',
-    href: '/contacto'
   }
 ];
