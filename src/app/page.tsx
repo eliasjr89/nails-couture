@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-20 bg-white dark:bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInUp>
             <div className="text-center mb-16">
