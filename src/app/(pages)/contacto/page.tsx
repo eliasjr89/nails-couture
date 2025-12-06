@@ -1,11 +1,11 @@
-import { FadeInUp } from '@/components/animations/FadeInUp';
-import { ContactForm } from '@/components/forms/ContactForm';
+import { FadeInUp } from "@/components/animations/FadeInUp";
+import { ContactForm } from "@/components/forms/ContactForm";
 
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 
 export const metadata = {
-  title: 'Contacto',
-  description: 'Ponte en contacto con nosotros. Estamos aquí para ayudarte',
+  title: "Contacto",
+  description: "Ponte en contacto con nosotros. Estamos aquí para ayudarte",
 };
 
 export default function ContactoPage() {
@@ -18,7 +18,8 @@ export default function ContactoPage() {
               Contáctanos
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Estamos aquí para responder tus preguntas y ayudarte a reservar tu próxima cita
+              Estamos aquí para responder tus preguntas y ayudarte a reservar tu
+              próxima cita
             </p>
           </div>
         </FadeInUp>
@@ -39,8 +40,9 @@ export default function ContactoPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Dirección</h3>
                       <p className="text-muted-foreground">
-                        Calle Ejemplo, 123<br />
-                        28001 Madrid, España
+                        Calle Sapporo 22
+                        <br />
+                        28923 Alcorcón, Madrid, España
                       </p>
                     </div>
                   </div>
@@ -51,7 +53,11 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Teléfono</h3>
-                      <p className="text-muted-foreground">+34 XXX XXX XXX</p>
+                      <a
+                        href="tel:+34623068610"
+                        className="text-muted-foreground hover:text-verde-pastel transition-colors">
+                        +34 623 06 86 10
+                      </a>
                     </div>
                   </div>
 
@@ -61,7 +67,11 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">info@serendinails.com</p>
+                      <a
+                        href="mailto:serendinails@gmail.com"
+                        className="text-muted-foreground hover:text-verde-pastel transition-colors">
+                        serendinails@gmail.com
+                      </a>
                     </div>
                   </div>
 
@@ -72,8 +82,10 @@ export default function ContactoPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Horario</h3>
                       <p className="text-muted-foreground">
-                        Lunes - Viernes: 10:00 - 20:00<br />
-                        Sábado: 10:00 - 14:00<br />
+                        Lunes - Viernes: 09:00 - 21:00
+                        <br />
+                        Sábado: 09:00 - 14:00
+                        <br />
                         Domingo: Cerrado
                       </p>
                     </div>
@@ -85,12 +97,11 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">WhatsApp</h3>
-                      <a 
-                        href="https://wa.me/34XXXXXXXXX" 
-                        target="_blank" 
+                      <a
+                        href="https://wa.me/34623068610"
+                        target="_blank"
                         rel="noopener noreferrer"
-                        className="text-verde-pastel hover:underline"
-                      >
+                        className="text-verde-pastel hover:underline">
                         Envíanos un mensaje
                       </a>
                     </div>
