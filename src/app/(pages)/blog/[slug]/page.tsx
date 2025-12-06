@@ -30,7 +30,9 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
-  const imageUrl = getStorageUrl(post.cover_image_url || post.image_url);
+  const imageUrl = getStorageUrl(
+    post.cover_image_url || post.image_url || null
+  );
   const formattedDate = post.published_at
     ? new Date(post.published_at).toLocaleDateString("es-ES", {
         year: "numeric",
