@@ -49,6 +49,13 @@ export function Footer() {
                   Galería
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contacto"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Contacto
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -56,9 +63,13 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3">
-              <li className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 text-verde-pastel" />
-                <span>Calle Sapporo 22, 28923 Alcorcón, Madrid</span>
+              <li className="flex items-center space-x-2 text-sm text-muted-foreground group">
+                <MapPin className="h-4 w-4 text-verde-pastel group-hover:text-dorado transition-colors" />
+                <Link
+                  href="/contacto#mapa"
+                  className="hover:text-foreground transition-colors">
+                  Calle Sapporo 22, 28923 Alcorcón, Madrid
+                </Link>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-verde-pastel" />

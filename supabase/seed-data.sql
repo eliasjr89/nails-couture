@@ -1,6 +1,9 @@
 -- Seed Data for Serendinails Database
 -- Run this in your Supabase SQL Editor after uploading images
 
+-- 0. CLEANUP (Optional: remove comment to clear data first)
+TRUNCATE TABLE services, courses, blog_posts CASCADE;
+
 -- ============================================
 -- SCHEMA UPDATES (Ensure slugs exist)
 -- ============================================
