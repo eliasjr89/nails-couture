@@ -224,7 +224,7 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`${
                   shouldDarken ? "text-white" : "text-gray-900 dark:text-white"
-                } hover:text-verde-pastel transition-colors p-2`}
+                } hover:text-dark transition-colors p-2`}
                 aria-label="Toggle menu">
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />

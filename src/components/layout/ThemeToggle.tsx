@@ -5,7 +5,11 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+  shouldDarken?: boolean;
+}
+
+export function ThemeToggle({ shouldDarken = false }: ThemeToggleProps) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -24,7 +28,11 @@ export function ThemeToggle() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="relative w-9 h-9 flex items-center justify-center transition-colors"
       aria-label="Toggle theme">
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0 text-white dark:text-white" />
+      <Sun
+        className={`h-5 w-5 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0 ${
+          shouldDarken ? "text-white" : "text-gray-900 dark:text-white"
+        }`}
+      />
       <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
     </motion.button>
   );
