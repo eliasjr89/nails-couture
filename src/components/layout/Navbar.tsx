@@ -214,17 +214,17 @@ export function Navbar() {
                 </span>
               </a>
 
-              <ThemeToggle />
+              <ThemeToggle shouldDarken={shouldDarken} />
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-4 z-50">
-              <ThemeToggle />
+              <ThemeToggle shouldDarken={shouldDarken} />
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className={`${
                   shouldDarken ? "text-white" : "text-gray-900 dark:text-white"
-                } hover:text-dark transition-colors p-2`}
+                } hover:text-white transition-colors p-2`}
                 aria-label="Toggle menu">
                 {isMobileMenuOpen ? (
                   <X className="h-6 w-6" />
