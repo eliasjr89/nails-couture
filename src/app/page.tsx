@@ -1,12 +1,15 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ArrowRight, Sparkles, GraduationCap, Star } from 'lucide-react';
-import { FadeInUp } from '@/components/animations/FadeInUp';
-import { StaggerContainer, itemVariants } from '@/components/animations/StaggerContainer';
-import { TestimonialsSlider } from '@/components/TestimonialsSlider';
-import { ScrollTriggerButton } from '@/components/animations/ScrollTriggerButton';
-import { motion } from 'framer-motion';
+import Link from "next/link";
+import { ArrowRight, Sparkles, GraduationCap, Star } from "lucide-react";
+import { FadeInUp } from "@/components/animations/FadeInUp";
+import {
+  StaggerContainer,
+  itemVariants,
+} from "@/components/animations/StaggerContainer";
+import { TestimonialsSlider } from "@/components/TestimonialsSlider";
+import { ScrollTriggerButton } from "@/components/animations/ScrollTriggerButton";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -14,11 +17,11 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-verde-pastel/10">
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <FadeInUp delay={0.2}>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
-              Belleza que{' '}
+              Belleza que{" "}
               <span className="bg-gradient-to-r from-verde-pastel to-dorado bg-clip-text text-transparent">
                 Inspira
               </span>
@@ -27,7 +30,7 @@ export default function Home() {
 
           <FadeInUp delay={0.4}>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Tu centro de confianza para uñas y tratamientos corporales. 
+              Tu centro de confianza para uñas y tratamientos corporales.
               Profesionalidad, calidad y pasión en cada servicio.
             </p>
           </FadeInUp>
@@ -38,25 +41,38 @@ export default function Home() {
                 href="https://www.fresha.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative px-8 py-4 rounded-lg border-2 border-border hover:border-verde-pastel font-semibold transition-all duration-400 inline-flex items-center space-x-2 overflow-hidden"
-              >
+                className="group relative px-8 py-4 rounded-lg border-2 border-border hover:border-verde-pastel font-semibold transition-all duration-400 inline-flex items-center space-x-2 overflow-hidden">
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-verde-pastel to-dorado origin-left"
                   initial={{ scaleX: 0 }}
                   variants={{
-                    hover: { scaleX: 1 }
+                    hover: { scaleX: 1 },
                   }}
                   transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 />
-                <span className="relative z-10 group-hover:text-black transition-colors duration-400">Reservar Cita</span>
+                <span className="relative z-10 group-hover:text-black transition-colors duration-400">
+                  Reservar Cita
+                </span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 group-hover:text-black transition-all duration-300 relative z-10" />
               </ScrollTriggerButton>
-              <Link
-                href="/servicios"
-                className="px-8 py-4 rounded-lg border-2 border-border hover:border-verde-pastel font-semibold transition-all inline-flex items-center space-x-2"
-              >
-                <span>Ver Servicios</span>
-              </Link>
+              <motion.div whileHover="hover" className="inline-block">
+                <Link
+                  href="/servicios"
+                  className="group relative px-8 py-4 rounded-lg border-2 border-border hover:border-verde-pastel font-semibold transition-all duration-400 inline-flex items-center space-x-2 overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0 bg-verde-pastel origin-left"
+                    initial={{ scaleX: 0 }}
+                    variants={{
+                      hover: { scaleX: 1 },
+                    }}
+                    transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+                  />
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-400">
+                    Ver Servicios
+                  </span>
+                  <ArrowRight className="h-5 w-5 relative z-10 group-hover:text-black transition-colors duration-400" />
+                </Link>
+              </motion.div>
             </div>
           </FadeInUp>
         </div>
@@ -77,7 +93,8 @@ export default function Home() {
                 Tratamientos Profesionales
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Descubre nuestra amplia gama de servicios diseñados para realzar tu belleza natural
+                Descubre nuestra amplia gama de servicios diseñados para realzar
+                tu belleza natural
               </p>
             </div>
           </FadeInUp>
@@ -85,19 +102,21 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Manicura',
-                description: 'Cuidado completo de tus manos con técnicas profesionales',
-                icon: '💅',
+                title: "Manicura",
+                description:
+                  "Cuidado completo de tus manos con técnicas profesionales",
+                icon: "💅",
               },
               {
-                title: 'Pedicura',
-                description: 'Tratamiento relajante para el cuidado de tus pies',
-                icon: '🦶',
+                title: "Pedicura",
+                description:
+                  "Tratamiento relajante para el cuidado de tus pies",
+                icon: "🦶",
               },
               {
-                title: 'Tratamientos Corporales',
-                description: 'Experiencias de bienestar para cuerpo y mente',
-                icon: '✨',
+                title: "Tratamientos Corporales",
+                description: "Experiencias de bienestar para cuerpo y mente",
+                icon: "✨",
               },
             ].map((service) => (
               <motion.div
@@ -105,15 +124,17 @@ export default function Home() {
                 variants={itemVariants}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border"
-              >
+                className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-border">
                 <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="font-display text-2xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <h3 className="font-display text-2xl font-bold mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  {service.description}
+                </p>
                 <Link
                   href="/servicios"
-                  className="inline-flex items-center space-x-2 text-verde-pastel font-semibold hover:gap-3 transition-all"
-                >
+                  className="inline-flex items-center space-x-2 text-verde-pastel font-semibold hover:gap-3 transition-all">
                   <span>Ver más</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -125,17 +146,18 @@ export default function Home() {
             <motion.div whileHover="hover" className="inline-block">
               <Link
                 href="/servicios"
-                className="group relative inline-flex items-center space-x-2 px-6 py-3 rounded-lg border-2 border-verde-pastel text-verde-pastel font-semibold transition-all duration-400 overflow-hidden"
-              >
+                className="group relative inline-flex items-center space-x-2 px-6 py-3 rounded-lg border-2 border-verde-pastel text-verde-pastel font-semibold transition-all duration-400 overflow-hidden">
                 <motion.div
                   className="absolute inset-0 bg-verde-pastel origin-left"
                   initial={{ scaleX: 0 }}
                   variants={{
-                    hover: { scaleX: 1 }
+                    hover: { scaleX: 1 },
                   }}
                   transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                 />
-                <span className="relative z-10 group-hover:text-black transition-colors duration-400">Ver Todos los Servicios</span>
+                <span className="relative z-10 group-hover:text-black transition-colors duration-400">
+                  Ver Todos los Servicios
+                </span>
                 <ArrowRight className="h-5 w-5 relative z-10 group-hover:text-black transition-colors duration-400" />
               </Link>
             </motion.div>
@@ -158,7 +180,8 @@ export default function Home() {
                 Cursos Profesionales
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Aprende de los mejores y conviértete en una profesional del sector
+                Aprende de los mejores y conviértete en una profesional del
+                sector
               </p>
             </div>
           </FadeInUp>
@@ -170,7 +193,8 @@ export default function Home() {
                   Formación Especializada
                 </h3>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Cursos diseñados para todos los niveles, desde principiantes hasta profesionales que buscan perfeccionar sus técnicas.
+                  Cursos diseñados para todos los niveles, desde principiantes
+                  hasta profesionales que buscan perfeccionar sus técnicas.
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-center space-x-3">
@@ -189,17 +213,18 @@ export default function Home() {
                 <motion.div whileHover="hover" className="inline-block">
                   <Link
                     href="/cursos"
-                    className="group relative inline-flex items-center space-x-2 px-6 py-3 rounded-lg bg-white/10 dark:bg-black/10 backdrop-blur-md border-2 border-border hover:border-verde-pastel font-semibold transition-all duration-400 overflow-hidden"
-                  >
+                    className="group relative inline-flex items-center space-x-2 px-6 py-3 rounded-lg bg-white/10 dark:bg-black/10 backdrop-blur-md border-2 border-border hover:border-verde-pastel font-semibold transition-all duration-400 overflow-hidden">
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-verde-pastel to-dorado origin-left"
                       initial={{ scaleX: 0 }}
                       variants={{
-                        hover: { scaleX: 1 }
+                        hover: { scaleX: 1 },
                       }}
                       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                     />
-                    <span className="relative z-10 group-hover:text-black transition-colors duration-400">Ver Cursos</span>
+                    <span className="relative z-10 group-hover:text-black transition-colors duration-400">
+                      Ver Cursos
+                    </span>
                     <ArrowRight className="h-5 w-5 relative z-10 group-hover:text-black transition-colors duration-400" />
                   </Link>
                 </motion.div>
@@ -214,9 +239,12 @@ export default function Home() {
                       <span className="text-2xl">📚</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">Teoría y Práctica</h4>
+                      <h4 className="font-semibold text-lg mb-2">
+                        Teoría y Práctica
+                      </h4>
                       <p className="text-muted-foreground">
-                        Equilibrio perfecto entre conocimientos teóricos y práctica real
+                        Equilibrio perfecto entre conocimientos teóricos y
+                        práctica real
                       </p>
                     </div>
                   </div>
@@ -225,9 +253,12 @@ export default function Home() {
                       <span className="text-2xl">👩‍🏫</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">Profesionales Expertos</h4>
+                      <h4 className="font-semibold text-lg mb-2">
+                        Profesionales Expertos
+                      </h4>
                       <p className="text-muted-foreground">
-                        Aprende de profesionales con años de experiencia en el sector
+                        Aprende de profesionales con años de experiencia en el
+                        sector
                       </p>
                     </div>
                   </div>
@@ -236,7 +267,9 @@ export default function Home() {
                       <span className="text-2xl">🎓</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-lg mb-2">Certificación</h4>
+                      <h4 className="font-semibold text-lg mb-2">
+                        Certificación
+                      </h4>
                       <p className="text-muted-foreground">
                         Obtén tu certificado oficial al completar el curso
                       </p>
@@ -269,18 +302,21 @@ export default function Home() {
           <TestimonialsSlider
             testimonials={[
               {
-                name: 'María García',
-                comment: 'Increíble experiencia. El trato es excepcional y los resultados superan mis expectativas cada vez.',
+                name: "María García",
+                comment:
+                  "Increíble experiencia. El trato es excepcional y los resultados superan mis expectativas cada vez.",
                 rating: 5,
               },
               {
-                name: 'Laura Martínez',
-                comment: 'Profesionales de verdad. He probado muchos sitios y este es sin duda el mejor. Totalmente recomendable.',
+                name: "Laura Martínez",
+                comment:
+                  "Profesionales de verdad. He probado muchos sitios y este es sin duda el mejor. Totalmente recomendable.",
                 rating: 5,
               },
               {
-                name: 'Ana Rodríguez',
-                comment: 'El curso que hice cambió mi carrera. Ahora trabajo con confianza gracias a todo lo que aprendí.',
+                name: "Ana Rodríguez",
+                comment:
+                  "El curso que hice cambió mi carrera. Ahora trabajo con confianza gracias a todo lo que aprendí.",
                 rating: 5,
               },
             ]}
@@ -298,14 +334,14 @@ export default function Home() {
                 ¿Lista para Transformar tu Belleza?
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Reserva tu cita ahora y descubre la diferencia de un servicio profesional
+                Reserva tu cita ahora y descubre la diferencia de un servicio
+                profesional
               </p>
               <a
                 href="https://www.fresha.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-8 py-4 rounded-lg bg-black text-white font-semibold hover:bg-black/90 transition-all"
-              >
+                className="inline-flex items-center space-x-2 px-8 py-4 rounded-lg bg-black text-white font-semibold hover:bg-black/90 transition-all">
                 <span>Reservar Ahora</span>
                 <ArrowRight className="h-5 w-5" />
               </a>
