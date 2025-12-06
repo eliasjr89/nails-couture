@@ -161,6 +161,17 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
   if (error) throw error;
   return data || [];
 }
+// Image Helper
+export function getStorageUrl(path: string | null): string {
+  if (!path) return "/images/placeholder.jpg"; // Return a default placeholder if no image
+  if (path.startsWith("http")) return path;
+
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!supabaseUrl) return path;
+
+  // Assuming paths are stored as 'bucket_name/file_path'
+  return `${supabaseUrl}/storage/v1/object/public/${path}`;
+}
 
 export async function getApprovedComments(): Promise<Comment[]> {
   const { data, error } = await supabase
