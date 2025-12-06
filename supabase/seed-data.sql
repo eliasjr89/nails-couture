@@ -5,29 +5,29 @@
 -- SERVICES
 -- ============================================
 
-INSERT INTO services (name, description, price, duration, category, image_url, is_featured) VALUES
-('Manicura Clásica', 'Manicura completa con limado, cutículas, hidratación y esmaltado tradicional. Perfecta para mantener tus uñas saludables y bonitas.', 25.00, 45, 'Manicura', 'services/manicura-clasica.jpg', true),
+INSERT INTO services (name, slug, description, price, duration, category, image_url, is_featured) VALUES
+('Manicura Clásica', 'manicura-clasica', 'Manicura completa con limado, cutículas, hidratación y esmaltado tradicional. Perfecta para mantener tus uñas saludables y bonitas.', 25.00, 45, 'Manicura', 'services/manicura-clasica.jpg', true),
 
-('Manicura con Semipermanente', 'Manicura completa con esmaltado semipermanente de larga duración. Hasta 3 semanas de uñas perfectas sin retoques.', 35.00, 60, 'Manicura', 'services/manicura-semipermanente.jpg', true),
+('Manicura con Semipermanente', 'manicura-semipermanente', 'Manicura completa con esmaltado semipermanente de larga duración. Hasta 3 semanas de uñas perfectas sin retoques.', 35.00, 60, 'Manicura', 'services/manicura-semipermanente.jpg', true),
 
-('Pedicura Spa', 'Pedicura completa con exfoliación, masaje relajante, hidratación profunda y esmaltado. Tus pies merecen lo mejor.', 40.00, 75, 'Pedicura', 'services/pedicura-spa.jpg', true),
+('Pedicura Spa', 'pedicura-spa', 'Pedicura completa con exfoliación, masaje relajante, hidratación profunda y esmaltado. Tus pies merecen lo mejor.', 40.00, 75, 'Pedicura', 'services/pedicura-spa.jpg', true),
 
-('Uñas Acrílicas', 'Extensión de uñas con acrílico de alta calidad. Diseño personalizado según tus preferencias. Duración aproximada de 3-4 semanas.', 50.00, 120, 'Uñas Artificiales', 'services/unas-acrilicas.jpg', true),
+('Uñas Acrílicas', 'unas-acrilicas', 'Extensión de uñas con acrílico de alta calidad. Diseño personalizado según tus preferencias. Duración aproximada de 3-4 semanas.', 50.00, 120, 'Uñas Artificiales', 'services/unas-acrilicas.jpg', true),
 
-('Uñas de Gel', 'Extensión de uñas con gel, más natural y flexible que el acrílico. Perfectas para quienes buscan elegancia y durabilidad.', 55.00, 120, 'Uñas Artificiales', 'services/unas-gel.jpg', true),
+('Uñas de Gel', 'unas-gel', 'Extensión de uñas con gel, más natural y flexible que el acrílico. Perfectas para quienes buscan elegancia y durabilidad.', 55.00, 120, 'Uñas Artificiales', 'services/unas-gel.jpg', true),
 
-('Diseño de Uñas Personalizado', 'Nail art único y personalizado. Desde diseños minimalistas hasta obras de arte en tus uñas. El límite es tu imaginación.', 15.00, 30, 'Nail Art', 'services/nail-art.jpg', false),
+('Diseño de Uñas Personalizado', 'diseno-personalizado', 'Nail art único y personalizado. Desde diseños minimalistas hasta obras de arte en tus uñas. El límite es tu imaginación.', 15.00, 30, 'Nail Art', 'services/nail-art.jpg', false),
 
-('Relleno de Uñas', 'Mantenimiento de uñas acrílicas o de gel. Recomendado cada 2-3 semanas para mantener tus uñas perfectas.', 35.00, 90, 'Mantenimiento', 'services/relleno.jpg', false),
+('Relleno de Uñas', 'relleno-unas', 'Mantenimiento de uñas acrílicas o de gel. Recomendado cada 2-3 semanas para mantener tus uñas perfectas.', 35.00, 90, 'Mantenimiento', 'services/relleno.jpg', false),
 
-('Retirada de Semipermanente', 'Retirada profesional y cuidadosa de esmaltado semipermanente sin dañar la uña natural.', 10.00, 20, 'Mantenimiento', 'services/retirada.jpg', false);
+('Retirada de Semipermanente', 'retirada-semipermanente', 'Retirada profesional y cuidadosa de esmaltado semipermanente sin dañar la uña natural.', 10.00, 20, 'Mantenimiento', 'services/retirada.jpg', false);
 
 -- ============================================
 -- COURSES
 -- ============================================
 
-INSERT INTO courses (title, description, price, duration, level, requirements, what_you_learn, image_url, is_featured) VALUES
-('Curso de Manicura Profesional', 
+INSERT INTO courses (title, slug, description, price, duration, level, requirements, what_you_learn, image_url, is_featured) VALUES
+('Curso de Manicura Profesional', 'curso-manicura-profesional',
 'Aprende las técnicas fundamentales de manicura profesional. Desde preparación de uñas hasta esmaltado perfecto. Incluye certificado oficial.', 
 350.00, 
 '20 horas (5 sesiones de 4 horas)', 
@@ -37,7 +37,7 @@ INSERT INTO courses (title, description, price, duration, level, requirements, w
 'courses/curso-manicura.jpg', 
 true),
 
-('Curso de Uñas Acrílicas', 
+('Curso de Uñas Acrílicas', 'curso-unas-acrilicas',
 'Domina la técnica de extensión de uñas con acrílico. Aprende a crear estructuras perfectas y duraderas. Certificado incluido.', 
 450.00, 
 '30 horas (6 sesiones de 5 horas)', 
@@ -47,7 +47,7 @@ true),
 'courses/curso-acrilicas.jpg', 
 true),
 
-('Curso de Uñas de Gel', 
+('Curso de Uñas de Gel', 'curso-unas-gel',
 'Especialízate en la técnica de gel, la más demandada actualmente. Aprende a trabajar con gel constructor y crear extensiones naturales.', 
 480.00, 
 '30 horas (6 sesiones de 5 horas)', 
@@ -57,7 +57,7 @@ true),
 'courses/curso-gel.jpg', 
 true),
 
-('Curso de Nail Art Avanzado', 
+('Curso de Nail Art Avanzado', 'curso-nail-art-avanzado',
 'Lleva tus diseños al siguiente nivel. Aprende técnicas avanzadas de decoración y conviértete en un artista de las uñas.', 
 380.00, 
 '25 horas (5 sesiones de 5 horas)', 
@@ -67,7 +67,7 @@ true),
 'courses/curso-nail-art.jpg', 
 false),
 
-('Curso Intensivo de Pedicura Spa', 
+('Curso Intensivo de Pedicura Spa', 'curso-pedicura-spa',
 'Aprende a ofrecer un servicio de pedicura completo y profesional. Incluye técnicas de spa y tratamientos especiales.', 
 320.00, 
 '16 horas (4 sesiones de 4 horas)', 
@@ -81,8 +81,8 @@ false);
 -- BLOG POSTS (Ejemplos)
 -- ============================================
 
-INSERT INTO blog_posts (title, excerpt, content, author, category, image_url, is_featured) VALUES
-('Tendencias en Uñas para 2024', 
+INSERT INTO blog_posts (title, slug, excerpt, content, author, category, image_url, is_featured) VALUES
+('Tendencias en Uñas para 2024', 'tendencias-unas-2024',
 'Descubre las tendencias más populares en nail art y diseños de uñas para este año.', 
 '<h2>Las Tendencias que Marcarán 2024</h2><p>Este año viene cargado de novedades en el mundo de las uñas...</p>', 
 'Equipo Serendinails', 
@@ -90,7 +90,7 @@ INSERT INTO blog_posts (title, excerpt, content, author, category, image_url, is
 'blog/tendencias-2024.jpg', 
 true),
 
-('Cómo Cuidar tus Uñas en Casa', 
+('Cómo Cuidar tus Uñas en Casa', 'cuidado-unas-casa',
 'Consejos profesionales para mantener tus uñas saludables entre visitas al salón.', 
 '<h2>Rutina de Cuidado Diario</h2><p>Mantener uñas saludables es más fácil de lo que piensas...</p>', 
 'Equipo Serendinails', 
@@ -98,7 +98,7 @@ true),
 'blog/cuidados-casa.jpg', 
 false),
 
-('Diferencias entre Gel y Acrílico', 
+('Diferencias entre Gel y Acrílico', 'diferencias-gel-acrilico',
 '¿No sabes cuál elegir? Te explicamos las diferencias y ventajas de cada técnica.', 
 '<h2>Gel vs Acrílico: ¿Cuál es Mejor?</h2><p>Ambas técnicas tienen sus ventajas...</p>', 
 'Equipo Serendinails', 
