@@ -5,45 +5,47 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: '--font-inter',
-  display: 'swap',
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: '--font-playfair',
-  display: 'swap',
+  variable: "--font-playfair",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
     default: "Serendinails - Uñas y Tratamientos Corporales",
-    template: "%s | Serendinails"
+    template: "%s | Serendinails",
   },
-  description: "Centro especializado en uñas y tratamientos corporales. Formaciones y cursos profesionales en manicura, pedicura y belleza.",
-  keywords: ["uñas", "manicura", "pedicura", "tratamientos corporales", "cursos de uñas", "formación belleza"],
+  description:
+    "Centro especializado en uñas y tratamientos corporales. Formaciones y cursos profesionales en manicura, pedicura y belleza.",
+  keywords: [
+    "uñas",
+    "manicura",
+    "pedicura",
+    "tratamientos corporales",
+    "cursos de uñas",
+    "formación belleza",
+  ],
   authors: [{ name: "Serendinails" }],
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Serendinails"
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: "cover"
+    title: "Serendinails",
   },
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: "https://serendinails.com",
     title: "Serendinails - Uñas y Tratamientos Corporales",
-    description: "Centro especializado en uñas y tratamientos corporales. Formaciones y cursos profesionales.",
+    description:
+      "Centro especializado en uñas y tratamientos corporales. Formaciones y cursos profesionales.",
     siteName: "Serendinails",
   },
   twitter: {
@@ -53,6 +55,14 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,20 +70,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-        >
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
     </html>
   );
 }
-
