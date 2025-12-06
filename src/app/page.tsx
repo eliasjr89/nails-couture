@@ -37,30 +37,14 @@ export default function Home() {
 
           <FadeInUp delay={0.6}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <ScrollTriggerButton
-                href="https://www.fresha.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative px-8 py-4 rounded-lg border-2 border-border hover:border-verde-pastel font-semibold transition-all duration-400 inline-flex items-center space-x-2 overflow-hidden">
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-verde-pastel to-dorado origin-left"
-                  initial={{ scaleX: 0 }}
-                  variants={{
-                    hover: { scaleX: 1 },
-                  }}
-                  transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-                />
-                <span className="relative z-10 group-hover:text-black transition-colors duration-400">
-                  Reservar Cita
-                </span>
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 group-hover:text-black transition-all duration-300 relative z-10" />
-              </ScrollTriggerButton>
               <motion.div whileHover="hover" className="inline-block">
-                <Link
-                  href="/servicios"
+                <ScrollTriggerButton
+                  href="https://www.fresha.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative px-8 py-4 rounded-lg border-2 border-border hover:border-verde-pastel font-semibold transition-all duration-400 inline-flex items-center space-x-2 overflow-hidden">
                   <motion.div
-                    className="absolute inset-0 bg-verde-pastel origin-left"
+                    className="absolute inset-0 bg-gradient-to-r from-verde-pastel to-dorado origin-left"
                     initial={{ scaleX: 0 }}
                     variants={{
                       hover: { scaleX: 1 },
@@ -68,11 +52,17 @@ export default function Home() {
                     transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                   />
                   <span className="relative z-10 group-hover:text-black transition-colors duration-400">
-                    Ver Servicios
+                    Reservar Cita
                   </span>
-                  <ArrowRight className="h-5 w-5 relative z-10 group-hover:text-black transition-colors duration-400" />
-                </Link>
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 group-hover:text-black transition-all duration-300 relative z-10" />
+                </ScrollTriggerButton>
               </motion.div>
+              <Link
+                href="/servicios"
+                className="px-8 py-4 rounded-lg border-2 border-border hover:border-verde-pastel font-semibold transition-all inline-flex items-center space-x-2">
+                <span>Ver Servicios</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </div>
           </FadeInUp>
         </div>
