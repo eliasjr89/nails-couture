@@ -101,7 +101,7 @@ export default function ContactoPage() {
                         href="https://wa.me/34623068610"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-verde-pastel hover:underline">
+                        className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-4 py-2 bg-verde-pastel text-primary-foreground shadow hover:bg-verde-pastel/90 w-full">
                         Envíanos un mensaje
                       </a>
                     </div>
@@ -109,10 +109,20 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="aspect-video rounded-2xl overflow-hidden bg-secondary border border-border">
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                  <p>Mapa de Google Maps aquí</p>
+              {/* Map Section */}
+              <div className="bg-card rounded-2xl p-2 shadow-lg border border-border h-[400px] overflow-hidden relative group">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  scrolling="no"
+                  marginHeight={0}
+                  marginWidth={0}
+                  src="https://maps.google.com/maps?q=Calle%20Sapporo%2022%2C%20Alcorc%C3%B3n%2C%20Madrid&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  title="Ubicación Serendinails"
+                  className="w-full h-full rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500"></iframe>
+                <div className="absolute bottom-4 right-4 bg-white/90 dark:bg-black/90 px-4 py-2 rounded-lg shadow backdrop-blur text-xs font-semibold">
+                  Calle Sapporo 22, Alcorcón
                 </div>
               </div>
             </div>
