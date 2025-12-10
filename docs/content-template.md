@@ -1,4 +1,4 @@
-# 📝 Plantilla de Contenido para Serendinails
+# 📝 Plantilla de Contenido para Nails Couture
 
 Por favor, rellena esta información para que podamos subirla a la página web.
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://serendinails.com"; // Change to actual domain when deployed
+  const baseUrl = "https://nailscouture.com"; // Change to actual domain when deployed
 
   // Static routes
   const routes = [

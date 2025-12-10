@@ -10,7 +10,6 @@ export const dynamic = "force-dynamic";
 interface Props {
   params: {
     slug: string;
-    
   };
 }
 
@@ -19,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   if (!service) return { title: "Servicio no encontrado" };
 
   return {
-    title: `${service.title || service.name} - Serendinails`,
+    title: `${service.title || service.name} - Nails Couture`,
     description: service.description,
   };
 }

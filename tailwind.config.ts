@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Serendinails brand colors
-        'verde-pastel': '#A9E6C9',
-        'dorado': '#D4AF37',
+        // Nails Couture brand colors
+        "verde-pastel": "#A9E6C9",
+        dorado: "#D4AF37",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -55,8 +55,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        display: ['var(--font-playfair)', 'serif'],
+        sans: ["var(--font-inter)", "sans-serif"],
+        display: ["var(--font-playfair)", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-display text-2xl font-bold bg-gradient-to-r from-verde-pastel to-dorado bg-clip-text text-transparent">
-              Serendinails
+              Nails Couture
             </h3>
             <p className="text-sm text-muted-foreground">
               Tu centro de confianza para uñas y tratamientos corporales.
@@ -82,9 +82,9 @@ export function Footer() {
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-verde-pastel" />
                 <a
-                  href="mailto:serendinails@gmail.com"
+                  href="mailto:nailscouture@gmail.com"
                   className="hover:text-foreground transition-colors">
-                  serendinails@gmail.com
+                  nailscouture@gmail.com
                 </a>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
@@ -105,7 +105,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Síguenos</h4>
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/serendinails"
+                href="https://www.instagram.com/nailscouture"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-to-r from-verde-pastel to-dorado flex items-center justify-center text-black hover:shadow-lg transition-shadow"
@@ -113,7 +113,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://www.tiktok.com/@serendinails"
+                href="https://www.tiktok.com/@nailscouture"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gradient-to-r from-verde-pastel to-dorado flex items-center justify-center text-black hover:shadow-lg transition-shadow"
@@ -132,7 +132,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p>
-            &copy; {new Date().getFullYear()} Serendinails. Todos los derechos
+            &copy; {new Date().getFullYear()} Nails Couture. Todos los derechos
             reservados.
           </p>
         </div>

@@ -1,8 +1,9 @@
-# 🏗️ Guía de Arquitectura y Desarrollo - Serendinails
+# 🏗️ Guía de Arquitectura y Desarrollo - Nails Couture
 
 ## 📋 Resumen del Proyecto
 
-**Serendinails** es una web profesional para un centro de uñas y tratamientos corporales que incluye:
+**Nails Couture** es una web profesional para un centro de uñas y tratamientos corporales que incluye:
+
 - Información de servicios
 - Cursos y formaciones (con PDFs descargables)
 - Blog con editor rico (TipTap)
@@ -15,18 +16,22 @@
 ## 🎨 Estilo Visual (Inspirado en Squarespace)
 
 ### Animaciones Clave
+
 1. **Navbar Inteligente**
+
    - Sticky con transición de transparente a sólido al hacer scroll
    - Usar `useScroll()` de Framer Motion
    - Backdrop blur inicial que desaparece
 
 2. **Scroll Animations**
+
    - Patrón: `fade in + slide up` (translateY: 20 → 0)
    - Duración: 0.4-0.6s
    - Easing: `ease-out` o `easeInOut`
    - Viewport trigger: `margin: "-100px"`
 
 3. **Stagger Effects**
+
    - Para listas de servicios, cursos, blog posts
    - Delay entre elementos: 0.1-0.15s
 
@@ -65,7 +70,7 @@
       /galeria/page.tsx         # CRUD galería
     /api
       /auth/[...nextauth]       # Si usas NextAuth (opcional)
-  
+
   /components
     /ui                         # shadcn/ui components
       /button.tsx
@@ -96,7 +101,7 @@
     /editor                     # Editor TipTap
       /TipTapEditor.tsx
       /Toolbar.tsx
-  
+
   /lib
     /supabase.ts                # Cliente Supabase
     /utils.ts                   # Utilidades (cn, etc)
@@ -105,7 +110,7 @@
     /hooks                      # Custom hooks
       /useScrollPosition.ts
       /useInView.ts
-  
+
   /types
     /database.ts                # Tipos de Supabase
     /index.ts                   # Tipos generales
@@ -118,6 +123,7 @@
 ### Tablas Principales
 
 #### `services`
+
 ```sql
 CREATE TABLE services (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -136,6 +142,7 @@ CREATE TABLE services (
 ```
 
 #### `courses`
+
 ```sql
 CREATE TABLE courses (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -155,6 +162,7 @@ CREATE TABLE courses (
 ```
 
 #### `blog_posts`
+
 ```sql
 CREATE TABLE blog_posts (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -172,6 +180,7 @@ CREATE TABLE blog_posts (
 ```
 
 #### `gallery_items`
+
 ```sql
 CREATE TABLE gallery_items (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -185,6 +194,7 @@ CREATE TABLE gallery_items (
 ```
 
 #### `comments` (opcional para testimonios)
+
 ```sql
 CREATE TABLE comments (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -198,6 +208,7 @@ CREATE TABLE comments (
 ```
 
 ### Storage Buckets
+
 - `service-images`: Imágenes de servicios
 - `course-materials`: PDFs y flyers de cursos
 - `blog-images`: Imágenes del blog
@@ -208,17 +219,17 @@ CREATE TABLE comments (
 ## 🔧 Tecnologías y Cuándo Usarlas
 
 ### 1. **Framer Motion** - Animaciones
+
 ```tsx
 // Ejemplo: FadeInUp component
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export const FadeInUp = ({ children, delay = 0 }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay, ease: "easeOut" }}
-    viewport={{ once: true, margin: "-100px" }}
-  >
+    viewport={{ once: true, margin: "-100px" }}>
     {children}
   </motion.div>
 );
@@ -226,10 +237,11 @@ export const FadeInUp = ({ children, delay = 0 }) => (
 // Uso:
 <FadeInUp delay={0.2}>
   <ServiceCard {...service} />
-</FadeInUp>
+</FadeInUp>;
 ```
 
 ### 2. **shadcn/ui** - Componentes UI
+
 ```bash
 # Instalar componentes según necesites:
 npx shadcn@latest add button
@@ -242,49 +254,52 @@ npx shadcn@latest add toast
 ```
 
 ### 3. **React Hook Form + Zod** - Formularios
+
 ```tsx
 // Ejemplo: Validation schema
-import { z } from 'zod';
+import { z } from "zod";
 
 export const contactSchema = z.object({
-  name: z.string().min(2, 'Nombre muy corto'),
-  email: z.string().email('Email inválido'),
+  name: z.string().min(2, "Nombre muy corto"),
+  email: z.string().email("Email inválido"),
   phone: z.string().optional(),
-  message: z.string().min(10, 'Mensaje muy corto'),
+  message: z.string().min(10, "Mensaje muy corto"),
 });
 
 // En el componente:
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const form = useForm({
   resolver: zodResolver(contactSchema),
-  defaultValues: { name: '', email: '', message: '' }
+  defaultValues: { name: "", email: "", message: "" },
 });
 ```
 
 ### 4. **TipTap** - Editor Rico
+
 ```tsx
 // Configuración básica
-import { useEditor, EditorContent } from '@tiptap/react';
-import StarterKit from '@tiptap/starter-kit';
-import Image from '@tiptap/extension-image';
-import Link from '@tiptap/extension-link';
+import { useEditor, EditorContent } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import Image from "@tiptap/extension-image";
+import Link from "@tiptap/extension-link";
 
 const editor = useEditor({
   extensions: [StarterKit, Image, Link],
   content: initialContent,
   onUpdate: ({ editor }) => {
     const json = editor.getJSON();
-    onChange(json);  // Guardar en Supabase como JSONB
-  }
+    onChange(json); // Guardar en Supabase como JSONB
+  },
 });
 ```
 
 ### 5. **Supabase** - Backend
+
 ```tsx
 // lib/supabase.ts
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
 export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -294,31 +309,32 @@ export const supabase = createClient(
 // Ejemplo: Fetch services
 export async function getServices() {
   const { data, error } = await supabase
-    .from('services')
-    .select('*')
-    .eq('is_active', true)
-    .order('created_at', { ascending: false });
-  
+    .from("services")
+    .select("*")
+    .eq("is_active", true)
+    .order("created_at", { ascending: false });
+
   if (error) throw error;
   return data;
 }
 ```
 
 ### 6. **next-seo** - SEO
+
 ```tsx
 // En cada página:
-import { NextSeo } from 'next-seo';
+import { NextSeo } from "next-seo";
 
 export default function ServiciosPage() {
   return (
     <>
       <NextSeo
-        title="Servicios de Uñas | Serendinails"
+        title="Servicios de Uñas | Nails Couture"
         description="Descubre nuestros servicios profesionales de manicura, pedicura y tratamientos corporales"
         openGraph={{
-          title: 'Servicios de Uñas | Serendinails',
-          description: '...',
-          images: [{ url: '/og-image.jpg' }],
+          title: "Servicios de Uñas | Nails Couture",
+          description: "...",
+          images: [{ url: "/og-image.jpg" }],
         }}
       />
       {/* Contenido */}
@@ -332,6 +348,7 @@ export default function ServiciosPage() {
 ## 🎯 Orden de Desarrollo Recomendado
 
 ### Fase 1: Layout y Navegación ✅ (COMPLETADO)
+
 - [x] Configuración inicial
 - [x] Instalación de dependencias
 - [ ] **TU TURNO**: Crear componente Navbar con scroll effect
@@ -339,6 +356,7 @@ export default function ServiciosPage() {
 - [ ] **TU TURNO**: Implementar ThemeToggle (dark mode)
 
 ### Fase 2: Home Page
+
 - [ ] **TU TURNO**: Hero section con animación
 - [ ] **TU TURNO**: Sección de servicios destacados (con stagger)
 - [ ] **TU TURNO**: Sección de cursos
@@ -346,6 +364,7 @@ export default function ServiciosPage() {
 - [ ] **TU TURNO**: CTA para reservas (link a Fresha)
 
 ### Fase 3: Páginas de Contenido
+
 - [ ] **TU TURNO**: `/servicios` - Grid de servicios con filtros
 - [ ] **TU TURNO**: `/servicios/[slug]` - Detalle de servicio
 - [ ] **TU TURNO**: `/cursos` - Lista de cursos
@@ -356,6 +375,7 @@ export default function ServiciosPage() {
 - [ ] **TU TURNO**: `/contacto` - Formulario + Google Maps
 
 ### Fase 4: Panel Admin
+
 - [ ] **TU TURNO**: Configurar Supabase Auth
 - [ ] **TU TURNO**: Layout protegido
 - [ ] **TU TURNO**: Dashboard con estadísticas
@@ -365,12 +385,14 @@ export default function ServiciosPage() {
 - [ ] **TU TURNO**: CRUD Galería (con upload de imágenes)
 
 ### Fase 5: Integraciones
+
 - [ ] **TU TURNO**: Google Maps en página de contacto
 - [ ] **TU TURNO**: Botón flotante de WhatsApp
 - [ ] **TU TURNO**: Links a Instagram
 - [ ] **TU TURNO**: Botón de reserva (Fresha)
 
 ### Fase 6: SEO y Optimización
+
 - [ ] **TU TURNO**: Meta tags en todas las páginas
 - [ ] **TU TURNO**: JSON-LD para local business
 - [ ] **TU TURNO**: Sitemap
@@ -402,16 +424,17 @@ export default function ServiciosPage() {
 ### Patrones de Código
 
 #### Server Components (por defecto en App Router)
+
 ```tsx
 // app/(pages)/servicios/page.tsx
-import { getServices } from '@/lib/supabase';
+import { getServices } from "@/lib/supabase";
 
 export default async function ServiciosPage() {
   const services = await getServices();
-  
+
   return (
     <div>
-      {services.map(service => (
+      {services.map((service) => (
         <ServiceCard key={service.id} {...service} />
       ))}
     </div>
@@ -420,20 +443,17 @@ export default async function ServiciosPage() {
 ```
 
 #### Client Components (cuando necesites interactividad)
-```tsx
-'use client';
 
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+```tsx
+"use client";
+
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export function InteractiveComponent() {
   const [isOpen, setIsOpen] = useState(false);
-  
-  return (
-    <motion.div whileHover={{ scale: 1.05 }}>
-      {/* ... */}
-    </motion.div>
-  );
+
+  return <motion.div whileHover={{ scale: 1.05 }}>{/* ... */}</motion.div>;
 }
 ```
 
@@ -442,16 +462,19 @@ export function InteractiveComponent() {
 ## 🚀 Próximos Pasos Inmediatos
 
 1. **Instalar shadcn/ui components básicos**:
+
    ```bash
    npx shadcn@latest add button card dialog form input select textarea toast
    ```
 
 2. **Crear Navbar con scroll effect**:
+
    - Usa `useScroll()` de Framer Motion
    - Transición de transparente a sólido
    - Menú móvil responsive
 
 3. **Configurar Supabase**:
+
    - Crear proyecto en supabase.com
    - Copiar URL y anon key a `.env.local`
    - Ejecutar SQL schema

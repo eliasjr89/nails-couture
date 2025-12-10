@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   if (!post) return { title: "Artículo no encontrado" };
 
   return {
-    title: `${post.title} - Blog Serendinails`,
+    title: `${post.title} - Blog Nails Couture`,
     description: post.excerpt,
   };
 }
@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
                 )}
                 <div className="flex items-center">
                   <User className="mr-2 h-4 w-4" />
-                  Serendinails
+                  Nails Couture
                 </div>
               </div>
             </FadeInUp>

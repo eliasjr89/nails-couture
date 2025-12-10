@@ -19,8 +19,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Serendinails - Uñas y Tratamientos Corporales",
-    template: "%s | Serendinails",
+    default: "Nails Couture - Uñas y Tratamientos Corporales",
+    template: "%s | Nails Couture",
   },
   description:
     "Centro especializado en uñas y tratamientos corporales. Formaciones y cursos profesionales en manicura, pedicura y belleza.",
@@ -32,25 +32,25 @@ export const metadata: Metadata = {
     "cursos de uñas",
     "formación belleza",
   ],
-  authors: [{ name: "Serendinails" }],
+  authors: [{ name: "Nails Couture" }],
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Serendinails",
+    title: "Nails Couture",
   },
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://serendinails.com",
-    title: "Serendinails - Uñas y Tratamientos Corporales",
+    url: "https://nailscouture.com",
+    title: "Nails Couture - Uñas y Tratamientos Corporales",
     description:
       "Centro especializado en uñas y tratamientos corporales. Formaciones y cursos profesionales.",
-    siteName: "Serendinails",
+    siteName: "Nails Couture",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Serendinails - Uñas y Tratamientos Corporales",
+    title: "Nails Couture - Uñas y Tratamientos Corporales",
     description: "Centro especializado en uñas y tratamientos corporales.",
   },
 };

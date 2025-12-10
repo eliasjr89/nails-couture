@@ -24,8 +24,8 @@ export const sendContactEmail = async ({
 
   try {
     const data = await resend.emails.send({
-      from: "Serendinails Website <onboarding@resend.dev>", // Update this with your verified domain later
-      to: ["serendinails@gmail.com"], // The business email
+      from: " Website <onboarding@resend.dev>", // Update this with your verified domain later
+      to: ["nailscouture@gmail.com"], // The business email
       replyTo: email,
       subject: subject || `Nuevo mensaje de contacto de ${name}`,
       html: `

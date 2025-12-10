@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
   if (!course) return { title: "Curso no encontrado" };
 
   return {
-    title: `${course.title} - Formación Serendinails`,
+    title: `${course.title} - Formación Nails Couture`,
     description: course.description,
   };
 }

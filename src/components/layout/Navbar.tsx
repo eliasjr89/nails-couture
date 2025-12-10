@@ -151,7 +151,7 @@ export function Navbar() {
             {/* Logo - Left with Gold Gradient */}
             <Link href="/" className="flex items-center space-x-2 group z-50">
               <span className="font-display text-3xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent hover:from-yellow-300 hover:via-yellow-400 hover:to-yellow-500 transition-all duration-400">
-                SERENDINAILS
+                NAILS COUTURE
               </span>
             </Link>
 

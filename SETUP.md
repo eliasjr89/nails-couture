@@ -1,4 +1,4 @@
-# 🛠️ Setup Guide - Serendinails
+# 🛠️ Setup Guide - Nails Couture
 
 Guía paso a paso para configurar el proyecto desde cero.
 
@@ -20,7 +20,7 @@ Guía paso a paso para configurar el proyecto desde cero.
 ```bash
 # Clonar el repositorio
 git clone <your-repo-url>
-cd Serendinails
+cd Nails Couture
 
 # Instalar dependencias
 npm install
@@ -37,7 +37,7 @@ cp .env.local.example .env.local
 
 1. Ve a [supabase.com](https://supabase.com)
 2. Click en "New Project"
-3. Nombre: `serendinails`
+3. Nombre: `Nails Couture`
 4. Región: Elige la más cercana a tus usuarios
 5. Contraseña de base de datos: Guárdala de forma segura
 
@@ -59,6 +59,7 @@ cp .env.local.example .env.local
 ### 2.4 Configurar Storage Buckets
 
 Los buckets ya se crean con el SQL schema, pero verifica en **Storage**:
+
 - `service-images` (público)
 - `course-materials` (público)
 - `blog-images` (público)
@@ -78,7 +79,7 @@ Los buckets ya se crean con el SQL schema, pero verifica en **Storage**:
 ### 3.1 Crear Proyecto en Google Cloud
 
 1. Ve a [console.cloud.google.com](https://console.cloud.google.com)
-2. Crea un nuevo proyecto: `Serendinails`
+2. Crea un nuevo proyecto: `Nails Couture`
 
 ### 3.2 Habilitar Maps JavaScript API
 
@@ -235,22 +236,27 @@ Ahora estás listo para desarrollar. Consulta [ARCHITECTURE.md](./ARCHITECTURE.m
 ## 🆘 Troubleshooting
 
 ### Error: Cannot find module 'X'
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 ### Error de TypeScript
+
 ```bash
 npm run build
 ```
+
 Revisa los errores y corrígelos uno por uno.
 
 ### Supabase no conecta
+
 - Verifica que las variables de entorno estén correctas
 - Asegúrate de que las RLS policies permitan acceso público a lectura
 
 ### Google Maps no carga
+
 - Verifica que la API key sea correcta
 - Asegúrate de que Maps JavaScript API esté habilitada
 - Revisa las restricciones de la API key

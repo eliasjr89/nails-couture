@@ -1,4 +1,4 @@
-# Serendinails
+# Nails Couture
 
 > Centro profesional de uñas y tratamientos corporales con formaciones y cursos
 
@@ -20,7 +20,7 @@
 ```bash
 # Clonar el repositorio
 git clone <repository-url>
-cd Serendinails
+cd Nails Couture
 
 # Instalar dependencias
 npm install
@@ -113,4 +113,4 @@ El proyecto está configurado para deploy automático en Vercel:
 
 ## 📄 Licencia
 
-Privado - Serendinails © 2024
+Privado - Nails Couture © 2024

@@ -73,7 +73,7 @@ WITH CHECK (bucket_id = 'gallery');
 Borra el código anterior del editor (o abre una nueva query) y pega este código. Haz clic en **Run**:
 
 ```sql
--- Seed Data for Serendinails Database
+-- Seed Data for Nails Couture Database
 -- Run this in your Supabase SQL Editor after uploading images
 
 -- ============================================
@@ -160,7 +160,7 @@ INSERT INTO blog_posts (title, excerpt, content, author, category, image_url, is
 ('Tendencias en Uñas para 2024',
 'Descubre las tendencias más populares en nail art y diseños de uñas para este año.',
 '<h2>Las Tendencias que Marcarán 2024</h2><p>Este año viene cargado de novedades en el mundo de las uñas...</p>',
-'Equipo Serendinails',
+'Equipo Nails Couture',
 'Tendencias',
 'blog/tendencias-2024.jpg',
 true),
@@ -168,7 +168,7 @@ true),
 ('Cómo Cuidar tus Uñas en Casa',
 'Consejos profesionales para mantener tus uñas saludables entre visitas al salón.',
 '<h2>Rutina de Cuidado Diario</h2><p>Mantener uñas saludables es más fácil de lo que piensas...</p>',
-'Equipo Serendinails',
+'Equipo Nails Couture',
 'Cuidados',
 'blog/cuidados-casa.jpg',
 false),
@@ -176,7 +176,7 @@ false),
 ('Diferencias entre Gel y Acrílico',
 '¿No sabes cuál elegir? Te explicamos las diferencias y ventajas de cada técnica.',
 '<h2>Gel vs Acrílico: ¿Cuál es Mejor?</h2><p>Ambas técnicas tienen sus ventajas...</p>',
-'Equipo Serendinails',
+'Equipo Nails Couture',
 'Educación',
 'blog/gel-vs-acrilico.jpg',
 true);

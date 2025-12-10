@@ -1,5 +1,5 @@
 -- =============================================
--- Serendinails Database Schema
+-- Nails Couture Database Schema
 -- Supabase PostgreSQL
 -- =============================================
 

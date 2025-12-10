@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/admin/"],
     },
-    sitemap: "https://serendinails.com/sitemap.xml",
+    sitemap: "https://nailscouture.com/sitemap.xml",
   };
 }

@@ -55,9 +55,9 @@ export default function ContactoPage() {
                   <div>
                     <h3 className="font-semibold mb-1 text-lg">Email</h3>
                     <a
-                      href="mailto:serendinails@gmail.com"
+                      href="mailto:Nails Couture@gmail.com"
                       className="text-muted-foreground hover:text-verde-pastel transition-colors">
-                      serendinails@gmail.com
+                      Nails Couture@gmail.com
                     </a>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ export default function ContactoPage() {
                 marginHeight={0}
                 marginWidth={0}
                 src="https://maps.google.com/maps?q=Calle%20Sapporo%2022%2C%20Alcorc%C3%B3n%2C%20Madrid&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                title="Ubicación Serendinails"
+                title="Ubicación Nails Couture"
                 className="w-full h-full rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500"
               />
               <div className="absolute bottom-6 right-6 bg-white/95 dark:bg-black/90 px-6 py-3 rounded-xl shadow-lg backdrop-blur text-sm font-bold border border-border/50">
